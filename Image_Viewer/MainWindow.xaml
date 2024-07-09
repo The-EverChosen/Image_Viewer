@@ -1,0 +1,37 @@
+﻿<Window x:Class="Image_Viewer.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Image_Viewer"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" >
+
+            </RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+
+        </Grid.RowDefinitions>
+        <StackPanel Orientation="Horizontal" Margin="5">
+            <Button Click="openImage">
+                <StackPanel Orientation="Horizontal" Margin="5">
+                    <TextBlock Text="Bild Öffnen"></TextBlock>
+                    <TextBlock FontFamily="Segoe UI Symbol" Text="&#xE1A5; " RenderTransformOrigin="0.5,0.5">
+                        <TextBlock.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform/>
+                                <SkewTransform/>
+                                <RotateTransform Angle="-179.808"/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </TextBlock.RenderTransform></TextBlock>
+                </StackPanel>
+            </Button>
+            <ComboBox x:Name="stretchMode" VerticalAlignment="Center" SelectionChanged="selectStretchMode"></ComboBox>
+        </StackPanel>
+        <Image x:Name="Bildanzeige" Grid.Row="1"></Image>
+
+    </Grid>
+</Window>
